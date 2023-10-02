@@ -1,0 +1,42 @@
+//
+//    author: brownfox2k6
+//   created: Mon 28 Aug 2023 12:54:05 Hanoi, Vietnam
+//
+ 
+var
+    t, n, i, j, maxa: Integer;
+    a: Array of Integer;
+    ans: Int64;
+ 
+ 
+Procedure solve();
+begin
+    ReadLn(n);
+    SetLength(a, n);
+ 
+    maxa := 0;
+    for j := 0 to n-1 do
+    begin
+        Read(a[j]);
+        if (j <> 0) and (j <> n-1) and (a[j] > maxa) then
+            maxa := a[j];
+    end;
+ 
+    if ((n = 3) and (a[1] mod 2 = 1)) or (maxa = 1) then
+    begin
+        WriteLn(-1);
+        Exit();
+    end;
+ 
+    ans := 0;
+    for j := 1 to n-2 do
+        ans += (a[j] + 1) div 2;
+    WriteLn(ans);
+end;
+ 
+ 
+begin
+    ReadLn(t);
+    for i := 0 to t-1 do
+        solve();
+end.
