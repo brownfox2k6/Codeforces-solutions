@@ -1,0 +1,28 @@
+// brownfox2k6
+ 
+var
+    t, i, n, f, s, j: Integer;
+ 
+begin
+    ReadLn(t);
+    for i := 0 to t-1 do
+    begin
+        ReadLn(n);
+        f := (n div 2) + 1;
+        s := 1;
+        for j := 0 to n-1 do
+        begin
+            if j mod 2 = 1 then
+            begin
+                Write(s, ' ');
+                s := s + 1;
+            end;
+            if j mod 2 = 0 then
+            begin
+                Write(f, ' ');
+                f := f + 1;
+            end;
+        end;
+        WriteLn();
+    end;
+end.
